@@ -1,22 +1,39 @@
 import React from 'react'
 import './TasksInput.css' 
 
-const TasksInput = ({ name, description}) => {
+const TasksInput = ({ handleSubmit }) =>   {
+  const handleChange = (e) => {   
+    console.log( e.target.value)
+  };
+  
   return (
     <div className="input-container">
-      <div className="flex-container">
-        <div className="small-container-input">
-          <p>Task name</p>
-          <input type="text"  value={name} />
-        </div>
-        <div className="small-container-input">
-          <p>Task description</p>
-          <textarea type="text"  value={description}/>
-        </div>
-      </div>
-      <div className="small-container-input">
-        <button className="button-submit-input"> Submit </button>
-      </div>
+      <form className="flex-container"
+            onSubmit={handleSubmit} >
+
+          <div className="small-container-input">
+            <input type="text" 
+                  name="name"
+                  placeholder="task name"
+                  // value={taskName}
+                  onChange={handleChange}
+            />
+          </div>
+
+          <div className="small-container-input">
+            <textarea type="text"  
+                  name="description" 
+                  rows="5" 
+                  placeholder="Task description"
+                  onChange={handleChange}
+                  // value={taskDescription}
+            />
+          </div>
+
+          <div className="small-container-input">
+            <button className="button-submit-input"> Submit </button>
+          </div>
+      </form>
     </div>
   )
 }

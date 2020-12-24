@@ -28,24 +28,26 @@ class App extends Component {
     ]
   }
 
-  newTaskHandler () {
+  newTaskHandler (props) {
     const tasks = {...this.state };
-    const newTask = tasks.push[{id:4, taskName:'build future', taskDescription:'code for that bro', isDone:false}]
+    const newTask = tasks.push[{
+        // id:{ Date.now() }, 
+        taskName: props.name, 
+        taskDescription:props.description, 
+        isDone:false}]
     this.state({
       newTask
     })
   }
 
-
-
   render () {
     let tasksDisplay = (
       this.state.tasks.map((task, index) => {
         return (<TasksOutput
-        name={task.taskName}
-        description={task.taskDescription}
-        submit={this.newTaskHandler}
-        isDone={task.isDone}
+          key={index}
+          name={task.taskName}
+          description={task.taskDescription}
+          isDone={task.isDone}
       />)
       })
     )
@@ -55,7 +57,8 @@ class App extends Component {
         <h1>Welcome to the task manager</h1>
         <h3>Please input your task</h3>
         { tasksDisplay }
-        <TasksInput />
+
+        <TasksInput onSubmit={this.newTaskHandler} />
       </div>
     );
   }
