@@ -68,7 +68,6 @@ class App extends Component {
         <h3>Please input your task</h3>
         { tasksDisplay }
 
-        {/* <TasksInput onSubmit={this.newTaskHandler} /> */}
         <Fragment>
           <div className="input-container">
             <form className="flex-container" onSubmit={this.handleSubmit}>
@@ -77,8 +76,6 @@ class App extends Component {
                         name="name"
                         id='input-1'
                         placeholder="input task name"
-                        // onChange={this.handleChangeName}
-                        // value={name}
                         required
                   />
                 </div>
@@ -88,19 +85,12 @@ class App extends Component {
                         name="description" 
                         id='input-2'
                         placeholder="input task description"
-                        // onChange={this.handleChangeDescription}
-                        // value={description}
                         required
                   />
                 </div>
 
                 <div className="small-container-input">
                 <input type="submit" value="Submit" />  
-                  {/* <button 
-                    className="button-submit-input"
-                    onSubmit={this.handleSubmit}> 
-                      Submit 
-                  </button> */}
                 </div>
             </form>
           </div>
