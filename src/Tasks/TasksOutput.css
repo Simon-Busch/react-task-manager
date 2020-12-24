@@ -1,0 +1,16 @@
+.container-output {
+  background-color: rgb(221, 227, 247);
+  border:1px solid black;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 14px;
+  color:black;
+  padding: 8px;
+}
+
+.container-output h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 24px;
+  font-weight: bold;
+}
