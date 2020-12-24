@@ -6,7 +6,6 @@ import '../Tasks/TasksInput.css'
 
 class App extends Component {
   state={
-
     tasks: [
       {
         id: 1,
@@ -29,30 +28,26 @@ class App extends Component {
     ]
   }
 
-  handleChangeName (event){   
-    return event.target.value;
-  };
-
-  handleChangeDescription (event){   
-    return event.target.value;
-  };
-
   handleSubmit = (event) => {
     event.preventDefault();
-    const inputs = event.target.getElementsByTagName('input');
-    console.log(inputs);
+    //select inputs
+    const input1 = document.getElementById('input-1');
+    const input2 = document.getElementById('input-2');
+    //select state
     const tasks = [...this.state.tasks ];
+    //set new task
     const newTasksList = {
         id:Date.now(),
-        taskName: inputs.name.value, 
-        taskDescription: inputs.description.value, 
+        taskName: input1.value, 
+        taskDescription: input2.value, 
         isDone:false}
     tasks.push(newTasksList)
     this.setState({
       tasks
     })
-    document.getElementById('input-1').value =""
-    document.getElementById('input-2').value =""
+    //reset fields
+    input1.value =""
+    input2.value =""
   }
 
   render () {
