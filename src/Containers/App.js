@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component, Fragment } from 'react'
-import TasksInput from '../Tasks/TasksInput'
+// import TasksInput from '../Tasks/TasksInput'
 import TasksOutput from '../Tasks/TasksOutput'
 import '../Tasks/TasksInput.css' 
 
@@ -41,12 +41,30 @@ class App extends Component {
     })
   }
 
-  handleChange = (e) => {   
-    console.log( e.target.value)
+  handleChangeName (event){   
+    return event.target.value;
+  };
+
+  handleChangeDescription (event){   
+    return event.target.value;
   };
 
   handleSubmit = (e) => {
-    console.log('coucou')
+    e.preventDefault();
+    // const nameInput = this.handleChangeName;
+    // const description = this.handleChangeDescription;
+
+    const tasks = {...this.state };
+    const newTasksList = tasks.push({
+        id:4,
+        taskName: this.handleChangeName, 
+        taskDescription: this.handleChangeDescription, 
+        isDone:false})
+    this.setState({
+      newTasksList
+    })
+
+    
   }
 
   render () {
@@ -70,14 +88,13 @@ class App extends Component {
         {/* <TasksInput onSubmit={this.newTaskHandler} /> */}
         <Fragment>
           <div className="input-container">
-            <form className="flex-container"
-                  onSubmit={this.handleSubmit} >
-
+            <form className="flex-container" >
                 <div className="small-container-input">
                   <input type="text" 
                         name="name"
                         placeholder="input task name"
-                        onChange={this.handleChange}
+                        onChange={this.handleChangeName}
+                        required
                   />
                 </div>
 
@@ -87,12 +104,17 @@ class App extends Component {
                         rows="5"
                         columns="30"
                         placeholder="input task description"
-                        onChange={this.handleChange}
+                        onChange={this.handleChangeDescription}
+                        required
                   />
                 </div>
 
                 <div className="small-container-input">
-                  <button className="button-submit-input"> Submit </button>
+                  <button 
+                    className="button-submit-input"
+                    onSubmit={this.handleSubmit}> 
+                      Submit 
+                  </button>
                 </div>
             </form>
           </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import './TasksInput.css' 
 
 const TasksInput = ({ handleSubmit }) =>   {
-  const [input, setInput] = useState('')
+  // const [input, setInput] = useState('')
 
   const handleChange = (e) => {   
     console.log( e.target.value)
