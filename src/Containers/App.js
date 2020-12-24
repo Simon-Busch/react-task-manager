@@ -29,18 +29,6 @@ class App extends Component {
     ]
   }
 
-  newTaskHandler (props) {
-    const tasks = {...this.state };
-    const newTasksList = tasks.push[{
-        // id:{ Date.now() }, 
-        taskName: props.name, 
-        taskDescription:props.description, 
-        isDone:false}]
-    this.state({
-      newTasksList
-    })
-  }
-
   handleChangeName (event){   
     return event.target.value;
   };
@@ -51,20 +39,20 @@ class App extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
+    const inputs = event.target.getElementsByTagName('input');
+    console.log(inputs);
     const tasks = [...this.state.tasks ];
     const newTasksList = {
-        id:4,
-        taskName: event.target.value, 
-        taskDescription: event.target.value, 
+        id:Date.now(),
+        taskName: inputs.name.value, 
+        taskDescription: inputs.description.value, 
         isDone:false}
     tasks.push(newTasksList)
     this.setState({
       tasks
     })
-
-    console.log('sent to paradise')
-    
+    document.getElementById('input-1').value =""
+    document.getElementById('input-2').value =""
   }
 
   render () {
@@ -92,29 +80,32 @@ class App extends Component {
                 <div className="small-container-input">
                   <input type="text" 
                         name="name"
+                        id='input-1'
                         placeholder="input task name"
-                        onChange={this.handleChangeName}
+                        // onChange={this.handleChangeName}
+                        // value={name}
                         required
                   />
                 </div>
 
                 <div className="small-container-input">
-                  <textarea type="text"  
+                  <input type="text"  
                         name="description" 
-                        rows="5"
-                        columns="30"
+                        id='input-2'
                         placeholder="input task description"
-                        onChange={this.handleChangeDescription}
+                        // onChange={this.handleChangeDescription}
+                        // value={description}
                         required
                   />
                 </div>
 
                 <div className="small-container-input">
-                  <button 
+                <input type="submit" value="Submit" />  
+                  {/* <button 
                     className="button-submit-input"
                     onSubmit={this.handleSubmit}> 
                       Submit 
-                  </button>
+                  </button> */}
                 </div>
             </form>
           </div>
