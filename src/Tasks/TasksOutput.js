@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-const TasksInput = ({ name, description, isDone }) => {
+const TasksOutput = ({ name, description, isDone }) => {
   return (
     <div> 
       <h3>{name}</h3>
@@ -10,4 +10,4 @@ const TasksInput = ({ name, description, isDone }) => {
   )
 }
 
-export default TasksInput
+export default TasksOutput

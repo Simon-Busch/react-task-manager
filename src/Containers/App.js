@@ -1,13 +1,14 @@
 import './App.css';
 import React, { Component } from 'react'
 import TasksInput from '../Tasks/TasksInput'
+import TasksOutput from '../Tasks/TasksOutput'
 
 class App extends Component {
   state={
     task1: {
       taskName:'Laundry',
       taskDescription: 'wash clothes carefuly',
-      isDone: false
+      isDone: true
     },
     task2: {
       taskName:'Shopping',
@@ -23,7 +24,7 @@ class App extends Component {
 
   newTaskHandler () {
     this.state({
-      
+
     })
   }
 
@@ -32,11 +33,13 @@ class App extends Component {
       <div className="App">
         <h1>Welcome to the task manager</h1>
         <h3>Please input your task</h3>
-        <TasksInput 
+        <TasksOutput
           name={this.state.task1.taskName}
           description={this.state.task1.taskDescription}
           submit={this.newTaskHandler}
+          isDone={this.state.task1.isDone}
         />
+        <TasksInput />
       </div>
     );
   }
