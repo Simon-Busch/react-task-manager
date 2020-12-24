@@ -49,21 +49,21 @@ class App extends Component {
     return event.target.value;
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    // const nameInput = this.handleChangeName;
-    // const description = this.handleChangeDescription;
+  handleSubmit = (event) => {
+    event.preventDefault();
 
-    const tasks = {...this.state };
-    const newTasksList = tasks.push({
+    const tasks = [...this.state.tasks ];
+    const newTasksList = {
         id:4,
-        taskName: this.handleChangeName, 
-        taskDescription: this.handleChangeDescription, 
-        isDone:false})
+        taskName: event.target.value, 
+        taskDescription: event.target.value, 
+        isDone:false}
+    tasks.push(newTasksList)
     this.setState({
-      newTasksList
+      tasks
     })
 
+    console.log('sent to paradise')
     
   }
 
@@ -88,7 +88,7 @@ class App extends Component {
         {/* <TasksInput onSubmit={this.newTaskHandler} /> */}
         <Fragment>
           <div className="input-container">
-            <form className="flex-container" >
+            <form className="flex-container" onSubmit={this.handleSubmit}>
                 <div className="small-container-input">
                   <input type="text" 
                         name="name"
