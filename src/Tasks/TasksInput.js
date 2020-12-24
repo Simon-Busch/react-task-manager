@@ -2,6 +2,8 @@ import React from 'react'
 import './TasksInput.css' 
 
 const TasksInput = ({ handleSubmit }) =>   {
+  const [input, setInput] = useState('')
+
   const handleChange = (e) => {   
     console.log( e.target.value)
   };
@@ -16,14 +18,15 @@ const TasksInput = ({ handleSubmit }) =>   {
                   name="name"
                   placeholder="task name"
                   // value={taskName}
-                  onChange={handleChange}
+                  onChange={this.input}
             />
           </div>
 
           <div className="small-container-input">
             <textarea type="text"  
                   name="description" 
-                  rows="5" 
+                  rows="5"
+                  columns="30"
                   placeholder="Task description"
                   onChange={handleChange}
                   // value={taskDescription}
