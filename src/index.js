@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Containers/App';
 import reportWebVitals from './reportWebVitals';
+import Footer from '../src/Components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
+    
     <div className="container">
       <App />
     </div>
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );
