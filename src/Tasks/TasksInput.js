@@ -17,7 +17,6 @@ const TasksInput = ({ handleSubmit }) =>   {
             <input type="text" 
                   name="name"
                   placeholder="task name"
-                  // value={taskName}
                   onChange={this.input}
             />
           </div>
@@ -29,7 +28,6 @@ const TasksInput = ({ handleSubmit }) =>   {
                   columns="30"
                   placeholder="Task description"
                   onChange={handleChange}
-                  // value={taskDescription}
             />
           </div>
 

@@ -78,9 +78,7 @@ class App extends Component {
                         placeholder="input task name"
                         required
                   />
-                </div>
 
-                <div className="small-container-input">
                   <input type="text"  
                         name="description" 
                         id='input-2'
@@ -88,9 +86,11 @@ class App extends Component {
                         required
                   />
                 </div>
-
                 <div className="small-container-input">
-                <input type="submit" value="Submit" />  
+                  
+                </div>
+                <div className="small-container-input">
+                  <input type="submit" value="Submit" id="submit-form-button"/>  
                 </div>
             </form>
           </div>
