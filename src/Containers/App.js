@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component, Fragment } from 'react'
-// import TasksInput from '../Tasks/TasksInput'
+import TasksInput from '../Tasks/TasksInput'
 import TasksOutput from '../Tasks/TasksOutput'
 import '../Tasks/TasksInput.css' 
 
@@ -68,33 +68,8 @@ class App extends Component {
         <h3>Please input your task</h3>
         { tasksDisplay }
 
-        <Fragment>
-          <div className="input-container">
-            <form className="flex-container" onSubmit={this.handleSubmit}>
-                <div className="small-container-input">
-                  <input type="text" 
-                        name="name"
-                        id='input-1'
-                        placeholder="input task name"
-                        required
-                  />
+        <TasksInput click={this.handleSubmit} />
 
-                  <input type="text"  
-                        name="description" 
-                        id='input-2'
-                        placeholder="input task description"
-                        required
-                  />
-                </div>
-                <div className="small-container-input">
-                  
-                </div>
-                <div className="small-container-input">
-                  <input type="submit" value="Submit" id="submit-form-button"/>  
-                </div>
-            </form>
-          </div>
-        </Fragment>
       </div>
     );
   }

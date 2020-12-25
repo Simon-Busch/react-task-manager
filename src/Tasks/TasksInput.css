@@ -25,6 +25,8 @@
   margin: 12px;
   margin-bottom: 12px;
   padding-bottom:12px;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-submit-input {

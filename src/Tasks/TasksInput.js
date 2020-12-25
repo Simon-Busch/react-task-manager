@@ -1,42 +1,34 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './TasksInput.css' 
 
-const TasksInput = ({ handleSubmit }) =>   {
-  // const [input, setInput] = useState('')
-
-  const handleChange = (e) => {   
-    console.log( e.target.value)
-  };
+const TasksInput = ({ click }) => {
   
   return (
-    <div className="input-container">
-      <form className="flex-container"
-            onSubmit={handleSubmit} >
+    <Fragment>
+      <div className="input-container">
+        <form className="flex-container" onSubmit={click}>
+            <div className="small-container-input">
+              <input type="text" 
+                    name="name"
+                    id='input-1'
+                    placeholder="input task name"
+                    required
+              />
 
-          <div className="small-container-input">
-            <input type="text" 
-                  name="name"
-                  placeholder="task name"
-                  onChange={this.input}
-            />
-          </div>
+              <input type="text"  
+                    name="description" 
+                    id='input-2'
+                    placeholder="input task description"
+                    required
+              />
+            </div>
 
-          <div className="small-container-input">
-            <textarea type="text"  
-                  name="description" 
-                  rows="5"
-                  columns="30"
-                  placeholder="Task description"
-                  onChange={handleChange}
-            />
-          </div>
-
-          <div className="small-container-input">
-            <button className="button-submit-input"> Submit </button>
-          </div>
-      </form>
-    </div>
+            <div className="small-container-input">
+              <input type="submit" value="Submit" id="submit-form-button"/>  
+            </div>
+        </form>
+      </div>
+    </Fragment>
   )
 }
-
 export default TasksInput
