@@ -1,9 +1,7 @@
 .input-container {
   width: 60%;
   height: 20%;
-  /* border: 1px solid black; */
   border-radius: 10px;
-  /* background-color: rgba(50, 55, 61, .2); */
   margin: 0 auto;
   padding: 8px;
   display:flex;
@@ -51,10 +49,6 @@
   border: none;
   border-radius: 15px;
   outline: none;
-}
-
-#input-2 {
-  height: 100px;
 }
 
 #input-1:focus,

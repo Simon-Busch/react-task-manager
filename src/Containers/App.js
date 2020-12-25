@@ -28,6 +28,12 @@ class App extends Component {
     ]
   }
 
+  removeHandle = (index) => {
+    const tasks = [...this.state.tasks];
+    tasks.splice(index, 1);
+    this.setState({ tasks });
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
     //select inputs
@@ -58,6 +64,7 @@ class App extends Component {
           name={task.taskName}
           description={task.taskDescription}
           isDone={task.isDone}
+          click={() => this.removeHandle(index)}
       />)
       })
     )
