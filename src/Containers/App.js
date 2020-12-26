@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import TasksInput from '../Tasks/TasksInput'
 import TasksOutput from '../Tasks/TasksOutput'
 import '../Tasks/TasksInput.css' 
+import toast, { Toaster } from 'react-hot-toast';
 
 class App extends Component {
   state={
@@ -32,7 +33,10 @@ class App extends Component {
     const tasks = [...this.state.tasks];
     tasks.splice(index, 1);
     this.setState({ tasks });
+    toast.error("Task deleted.")
   }
+
+  notify = () => toast('Here is your toast.');
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -54,6 +58,7 @@ class App extends Component {
     //reset fields
     input1.value =""
     input2.value =""
+    toast.success('New task added!')
   }
 
   render () {
@@ -73,6 +78,7 @@ class App extends Component {
       <div className="App">
         <h1>Welcome to the task manager</h1>
         <h3>Please input your task</h3>
+          <Toaster />
         { tasksDisplay }
 
         <TasksInput click={this.handleSubmit} />
