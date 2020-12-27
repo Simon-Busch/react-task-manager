@@ -9,7 +9,6 @@ const Footer = () => {
         <p>Developped by Simon Busch</p>
       </div>
       <div className="Footer-right">
-
       </div>
     </div>
     
