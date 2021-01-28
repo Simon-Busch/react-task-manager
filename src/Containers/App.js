@@ -76,11 +76,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Welcome to the task manager</h1>
+        <h1>Keep track of your tasks</h1>
         <h3>Please input your task</h3>
           <Toaster />
-        { tasksDisplay }
-
+        <div className="container-tasks">
+          { tasksDisplay }
+        </div>
         <TasksInput click={this.handleSubmit} />
 
       </div>

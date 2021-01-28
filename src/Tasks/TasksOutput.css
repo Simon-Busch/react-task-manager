@@ -1,13 +1,29 @@
 .container-output {
-  background-color: rgba(196, 247, 211, 0.699);
-  border:1px solid black;
-  width: 30%;
+  /* background-color: rgba(196, 247, 211, 0.699); */
+  /* border:1px solid black; */
+  width: 80%;
+  height: 10rem;
   margin: 0 auto;
   margin-bottom: 14px;
   padding: 10px;
   color:black;
   border-radius: 25px;
   position:relative;
+  display: grid;
+  grid-column: 1fr 1fr;
+  background-color: #0d0914;
+  backdrop-filter: blur(22px);
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.074);
+  color: #e6e6e6;
+  padding: 30px;
+  border-radius: 12px;
+  gap: 15px;
+  min-width: 250px;
+  min-height: 130px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 .container-output h3 {
